@@ -1,10 +1,10 @@
 This extension allows you to utilize Unakin’s functionality directly within Visual Studio.
 
-To use this tool, you must create an account via the dashboard at: https://dashboard.unakin.ai
+# Tool
 
 Please note that this package is optimized for C#, and some functionalities may not work for other languages.
 
-"Unakin Chat" tool window 🛠
+# "Unakin Chat" tool window 🛠
 To access the main tool window, right-click in your IDE and select "Unakin Chat":
 
 ![image](https://github.com/unakin/public-images/blob/main/main.png)
@@ -32,7 +32,8 @@ Project Summary and Automated Testing will display a pop-up where you can select
 
 Data Generation will open a window where you can specify the data you require and generate synthetic data accordingly. You can use this to create datasets - for instance, you could create a list of 20 sword names with 20 accompanying characteristics. You can save the dataset in CSV format.
 
-Features in the code editor 👩‍💻
+# Features in the code editor 👩‍💻
+
 If you wish to interact with your code, highlight the relevant snippet, right-click, and select one of the following commands:
 
 Complete: Begin writing a method, select it, and request completion.
@@ -46,44 +47,22 @@ Translate: Replace the selected text with its English translation.
 Cancel: Cancel any command requests that are being processed or awaited.
 Unakin Chat: Opens the window where you can chat with Unakin.
 Tutorial: Displays a short tutorial with key points.
+
 Unakin will process your request, and the generated code will be shown directly in the Unakin Chat window. You will be able to copy it, replace the old code with the generated one, or get a zoomed view. See the explain command in action below:
 
 ![image](https://github.com/unakin/public-images/blob/main/IDE-Commands.png)
 
-Agent Hub 🚀
+# Agent Hub 🚀
+
 The Agent Hub serves as a framework where you can either construct a workflow or utilize an autonomous one. When constructing your workflow, you have the ability to define agents (think of them as autonomous coding partners) and collaborate seamlessly. The framework includes three preconfigured agents designed to aid in creating, adding comments to, and optimizing your script. Alternatively, you can establish your own agents by clicking the 'Add Agent' button—ensure the active toggle is enabled. Once defined, you can arrange them in the desired logical sequence using drag and drop functionality. These agents will then collectively address your requests during your chats. To access the Hub, simply toggle the switch to "On":
 
 In the autonomous workflow, agents will respond to your complex requests by breaking them down into individual steps, before actioning these steps to achieve a broader objective. For instance, if providing a prompt such as "Create a Shooter game in Unity", you'll receive multiple scripts and instructions. Sit back and allow the agents to handle the workload.
 
-agents.png
+![image](https://github.com/unakin/public-images/blob/main/agents.png)
 
 Additionally, you can access the Local Workflow special command by entering "//" in the chat. This feature allows you to select a local folder and apply the agent steps to your local scripts, enabling automatic commenting or optimization.
 
-Authentication 🔑
-To use this tool, you must create an account via the dashboard at: https://dashboard.unakin.ai
-
-These credentials need to be provided during the login process or by clicking on Settings at the top-right corner:
-
-![image](https://github.com/unakin/public-images/blob/main/settings.png)
-
+# Authentication 🔑
 
 Advanced settings can be accessed at Tools->Options->Visual Unakin Studio.
 
-Known Issues ⚠
-Unfortunately, the API has a limitation regarding the size of the question plus the given answer.
-
-If the question sent is too long (for example, a method with many lines) and/or the generated response is too lengthy, the API may truncate the response or fail to respond at all.
-
-For these cases, we advise you to customize the question suitably or to modify the model options to enhance the responses.
-
-Disclaimer
-This is a package distributed by Unakin LTD.
-
-Release Notes
-Version 1.3.0 - Introduced Add Context, Autonomous Agents, and Data Generation
-
-Version 1.1.9 - Created new UI and UX
-
-Version 1.1.1 - Addressed some issues with cancelling requests sent to the agents and long completion times.
-
-1.3.2
