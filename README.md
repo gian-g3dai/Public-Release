@@ -1,6 +1,7 @@
-This extension allows you to utilize Unakin’s functionality directly within Visual Studio.
 
 # Tool
+
+This extension allows you to utilize Unakin’s functionality directly within Visual Studio.
 
 Please note that this package is optimized for C#, and some functionalities may not work for other languages.
 
@@ -58,7 +59,7 @@ The Agent Hub serves as a framework where you can either construct a workflow or
 
 In the autonomous workflow, agents will respond to your complex requests by breaking them down into individual steps, before actioning these steps to achieve a broader objective. For instance, if providing a prompt such as "Create a Shooter game in Unity", you'll receive multiple scripts and instructions. Sit back and allow the agents to handle the workload.
 
-![image](https://github.com/unakin/public-images/blob/main/agents.png)
+![image](https://github.com/unakin/public-images/blob/main/Agents.png)
 
 Additionally, you can access the Local Workflow special command by entering "//" in the chat. This feature allows you to select a local folder and apply the agent steps to your local scripts, enabling automatic commenting or optimization.
 
