@@ -1,0 +1,130 @@
+﻿<UserControl x:Class="Unakin.ToolWindows.TerminalWindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
+             Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
+             Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             Name="MyToolWindow">
+    <UserControl.Resources>
+        <RoutedUICommand x:Key="sendCommand" Text="Text" />
+        <RoutedUICommand x:Key="inContextCommand" Text="Text" />
+        <RoutedUICommand x:Key="cancelCommand" Text="Text" />
+    </UserControl.Resources>
+
+    <UserControl.CommandBindings>
+        <CommandBinding Command="{StaticResource sendCommand}" Executed="SendRequest" />
+        <CommandBinding Command="{StaticResource inContextCommand}" Executed="InContextRequest" />
+        <CommandBinding Command="{StaticResource cancelCommand}" Executed="CancelRequest" />
+    </UserControl.CommandBindings>
+
+    <UserControl.InputBindings>
+        <KeyBinding Key="Enter" Modifiers="Ctrl" Command="{StaticResource sendCommand}" />
+        <KeyBinding Key="I" Modifiers="Ctrl" Command="{StaticResource inContextCommand}" />
+        <KeyBinding Key="Z" Modifiers="Alt" Command="{StaticResource cancelCommand}" />
+    </UserControl.InputBindings>
+
+    <Grid Name="grdRoot" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Name="grdRequest" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*" MinHeight="10px"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Name="grdRequestCommands">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" HorizontalAlignment="Left">Ask:</TextBlock>
+                <Button Grid.Column="2" Height="20" Width="20" HorizontalAlignment="Left" Name="btnRequestSend" ToolTip="Send (Ctrl+Enter)" Command="{StaticResource sendCommand}">
+                    <Image Source="pack://application:,,,/Unakin;component/Resources/send.png" Width="15" Height="15"/>
+                </Button>
+                <Button Grid.Column="4" Height="20" Width="20" HorizontalAlignment="Left" Name="btnInContextRequest" ToolTip="In Context Request" Command="{StaticResource inContextCommand}">
+                    <Image Source="pack://application:,,,/Unakin;component/Resources/inContextSearch.png" Width="15" Height="15"/>
+                </Button>
+                <Button Grid.Column="6" Height="20" Width="20" HorizontalAlignment="Left" Name="btnCancel" ToolTip="Cancel (Alt+Z)" Command="{StaticResource cancelCommand}" IsEnabled="False">
+                    <Image Source="pack://application:,,,/Unakin;component/Resources/cancel.png" Width="15" Height="15"/>
+                </Button>
+                <Button Grid.Column="8" Height="20" Width="20" HorizontalAlignment="Left" Name="btnRequestPast" Click="btnRequestPast_Click" ToolTip="Paste">
+                    <Image Source="pack://application:,,,/Unakin;component/Resources/paste.png" Width="15" Height="15"/>
+                </Button>
+                <Button Grid.Column="10" Height="20" Width="20" HorizontalAlignment="Left" Name="btnRequestClear" Click="btnRequestClear_Click" ToolTip="Clear">
+                    <Image Source="pack://application:,,,/Unakin;component/Resources/clear.png" Width="15" Height="15"/>
+                </Button>
+                <Grid Name="grdProgress" Grid.Column="12" Visibility="Collapsed">
+                    <ProgressBar Minimum="0" Maximum="100" IsIndeterminate="True" />
+                    <TextBlock Text="Response is loading..." HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" />
+                </Grid>
+                <Image Grid.Column="12" x:Name="indicatorUp" Source="pack://application:,,,/Unakin;component/Resources/serverIndicatorUp.png" VerticalAlignment="Top" HorizontalAlignment="Right" Width="Auto" Height="18" Visibility="Visible" Margin="5,0,5,0" ToolTip="Server Status" Panel.ZIndex="-1"/>
+                <Image Grid.Column="12" x:Name="indicatorDown" Source="pack://application:,,,/Unakin;component/Resources/serverIndicatorDown.png" VerticalAlignment="Top" HorizontalAlignment="Right" Width="Auto" Height="18" Visibility="Hidden" Margin="5,0,5,0" ToolTip="Server Status" Panel.ZIndex="-1"/>
+            </Grid>
+            <avalonEdit:TextEditor        
+                xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit" 
+                Name="txtRequest" TextChanged="txtRequest_TextChanged" BorderBrush="DarkGray" BorderThickness="1"
+                Grid.Row="2" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ShowLineNumbers="True">
+                <avalonEdit:TextEditor.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Command="Paste" />
+                    </ContextMenu>
+                </avalonEdit:TextEditor.ContextMenu>
+            </avalonEdit:TextEditor>
+        </Grid>
+        <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" Background="Blue" Margin="0,5,0,5" />
+        <Grid Grid.Row="2" Name="grdResponse">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*" MinHeight="10px"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Name="grdResponseCommands">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" HorizontalAlignment="Left">Response:</TextBlock>
+                <Button Grid.Column="2" Height="20" Width="20" HorizontalAlignment="Left" Name="btnResponseCopy" Click="btnResponseCopy_Click" ToolTip="Copy">
+                    <Image Source="pack://application:,,,/Unakin;component/Resources/copy.png" Width="15" Height="15"/>
+                </Button>
+            </Grid>
+            <avalonEdit:TextEditor        
+                xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+                Name="txtResponse" IsReadOnly="True" BorderBrush="DarkGray" BorderThickness="1"
+                Grid.Row="2" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ShowLineNumbers="True">
+                <avalonEdit:TextEditor.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Command="Copy" />
+                    </ContextMenu>
+                </avalonEdit:TextEditor.ContextMenu>
+            </avalonEdit:TextEditor>
+        </Grid>
+        <Label Grid.Row="3" x:Name="lblError" Foreground="Red" Visibility="Hidden"></Label>
+    </Grid>
+</UserControl>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="Unakin.ColumnInputDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Column Input" Height="250" Width="400"
+        Background="#282828">
+    <!-- Assuming the original background color you wanted was #282828 -->
+    <Window.Resources>
+        <!-- Watermark for column headers TextBox with adjusted margin -->
+        <VisualBrush x:Key="columnHeadersWatermark" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+            <VisualBrush.Visual>
+                <TextBlock Text="A sword name, A wizard name, A spell" FontStyle="Italic" Foreground="Gray" Margin="5,0,0,0"/>
+            </VisualBrush.Visual>
+        </VisualBrush>
+        <!-- Watermark for rows TextBox with adjusted margin -->
+        <VisualBrush x:Key="rowsWatermark" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+            <VisualBrush.Visual>
+                <TextBlock Text="e.g., 5" FontStyle="Italic" Foreground="Gray" Margin="5,0,0,0"/>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Window.Resources>
+
+    <StackPanel Margin="10">
+        <TextBlock Text="Enter column headers separated by commas:" Foreground="White"/>
+        <TextBox x:Name="txtColumnHeaders" Margin="0,10" Background="{StaticResource columnHeadersWatermark}" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+        <TextBlock Text="Enter the number of rows:" Foreground="White"/>
+        <TextBox x:Name="txtRows" Margin="0,10" Background="{StaticResource rowsWatermark}" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+        <Button Content="OK" HorizontalAlignment="Right" Click="OkButton_Click" Background="White" Foreground="Black" Margin="0,20,0,0"/>
+    </StackPanel>
+</Window>

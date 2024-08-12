@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="VisualUnakinStudio2019.4854bc98-735d-4622-a0cf-30454b50aa0f" Version="1.2.1" Language="en-US" Publisher="UNAKIN LTD" />
+        <DisplayName>Visual Unakin Studio 2019</DisplayName>
+        <Description xml:space="preserve">Use Unakin's GameDevGPT directly within your Visual Studio Workflow.</Description>
+        <Icon>Icon2019.png</Icon>
+        <PreviewImage>Resources\Icon.png</PreviewImage>
+        <Tags>Unakin, Visual Studio</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Version="[16.0,17.0)" Id="Microsoft.VisualStudio.Community" />
+    </Installation>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
+</PackageManifest>

@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <LangVersion>latest</LangVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{17478673-FB35-4FF3-8EA2-9B2849B490BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Unakin</RootNamespace>
+    <AssemblyName>Unakin</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+    <UseCodebase>true</UseCodebase>
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>true</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>true</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>true</CopyOutputSymbolsToOutputDirectory>
+    <StartAction>Program</StartAction>
+    <StartProgram Condition="'$(DevEnvDir)' != ''">$(DevEnvDir)devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DeployExtension>True</DeployExtension>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="source.extension.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>source.extension.vsixmanifest</DependentUpon>
+    </Compile>
+    <Compile Include="..\VSCommandTable.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VSCommandTable.vsct</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Link>README.md</Link>
+    </None>
+    <None Include="..\README-zh.md">
+      <Link>README-zh.md</Link>
+    </None>
+    <Resource Include="Resources\add.png" />
+    <Resource Include="Resources\addnew.png" />
+    <Content Include="Resources\AppSQLite.db3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+      <Generator>VsixManifestGenerator</Generator>
+      <LastGenOutput>source.extension.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AvalonEdit">
+      <Version>6.3.0.90</Version>
+    </PackageReference>
+    <PackageReference Include="Community.VisualStudio.Toolkit.16">
+      <Version>16.0.507</Version>
+    </PackageReference>
+    <PackageReference Include="Community.VisualStudio.VSCT" Version="16.0.29.6" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp">
+      <Version>4.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <Version>4.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.7.2196">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="OpenAI">
+      <Version>1.7.2</Version>
+    </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.8.116</Version>
+    </PackageReference>
+    <PackageReference Include="VsixLogger">
+      <Version>1.1.44</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\unakin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\edit.png" />
+    <Resource Include="Resources\dante.png" />
+    <Resource Include="Resources\copynew.png" />
+    <Resource Include="Resources\expandnew.png" />
+    <Content Include="Resources\folder.png" />
+    <Content Include="Resources\frame.png" />
+    <Resource Include="Resources\genie.png" />
+    <Content Include="Resources\glasses.png" />
+    <Resource Include="Resources\inContextSearch.png" />
+    <Resource Include="Resources\info-16.png" />
+    <Content Include="Resources\mug.png" />
+    <Resource Include="Resources\OkBlue.png" />
+    <Resource Include="Resources\optimus.png" />
+    <Resource Include="Resources\plusnew.png" />
+    <Resource Include="Resources\plusnew_v1.png" />
+    <Content Include="Resources\ProjectSummary.png" />
+    <Resource Include="Resources\settings.png" />
+    <Resource Include="Resources\refresh.png" />
+    <Resource Include="Resources\remove.png" />
+    <Resource Include="Resources\removenew.png" />
+    <Content Include="Resources\semanticsearch.png" />
+    <Resource Include="Resources\serverIndicatorDown.png" />
+    <Resource Include="Resources\serverIndicatorUp.png" />
+    <Content Include="Resources\shortsearch.png" />
+    <Content Include="Resources\turbo.png" />
+    <Resource Include="Resources\unakin-chat.png" />
+    <Resource Include="Resources\tutorial.png" />
+    <Content Include="Resources\unakin_logo.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Resource Include="Resources\unakin_login.png" />
+    <Content Include="Resources\UnitTesting.png" />
+    <Resource Include="..\Resources\translate.png">
+      <Link>Resources\translate.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\optimizeDiffView.png">
+      <Link>Resources\optimizeDiffView.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\cancel.png">
+      <Link>Resources\cancel.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\addSummaryForAll.png">
+      <Link>Resources\addSummaryForAll.png</Link>
+    </Resource>
+    <Content Include="..\Resources\cancelCommand.png">
+      <Link>Resources\cancelCommand.png</Link>
+    </Content>
+    <Content Include="Icon2019.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="..\Resources\addComments.png">
+      <Link>Resources\addComments.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\addSummary.png">
+      <Link>Resources\addSummary.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\addTests.png">
+      <Link>Resources\addTests.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\askAnything.png">
+      <Link>Resources\askAnything.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\bot.png">
+      <Link>Resources\bot.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\chatGPT.png">
+      <Link>Resources\chatGPT.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\clear.png">
+      <Link>Resources\clear.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\complete.png">
+      <Link>Resources\complete.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\copy.png">
+      <Link>Resources\copy.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\customAfter.png">
+      <Link>Resources\customAfter.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\customBefore.png">
+      <Link>Resources\customBefore.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\customReplace.png">
+      <Link>Resources\customReplace.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\explain.png">
+      <Link>Resources\explain.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\findBugs.png">
+      <Link>Resources\findBugs.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\garbage.png">
+      <Link>Resources\garbage.png</Link>
+    </Resource>
+    <Content Include="..\Resources\Icon.png">
+      <Link>Resources\Icon.png</Link>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Resource Include="..\Resources\optimize.png">
+      <Link>Resources\optimize.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\paste.png">
+      <Link>Resources\paste.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\send.png">
+      <Link>Resources\send.png</Link>
+    </Resource>
+    <Resource Include="..\Resources\vs.png">
+      <Link>Resources\vs.png</Link>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\Resources\check.png">
+      <Link>Resources\check.png</Link>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <VSCTCompile Include="..\VSCommandTable.vsct">
+      <ResourceName>Menus.ctmenu</ResourceName>
+      <Generator>VsctGenerator</Generator>
+      <LastGenOutput>VSCommandTable.cs</LastGenOutput>
+    </VSCTCompile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="..\VisualChatGPTStudioShared\VisualChatGPTStudioShared.projitems" Label="Shared" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Target Name="IncludeNuGetPackageReferences" AfterTargets="GetVsixSourceItems">
+    <ItemGroup>
+      <VSIXSourceItem Include="@(ReferenceCopyLocalPaths)" Condition="'%(ReferenceCopyLocalPaths.NuGetPackageId)' == 'Newtonsoft.Json'" />
+    </ItemGroup>
+  </Target>
+</Project>

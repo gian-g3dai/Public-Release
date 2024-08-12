@@ -1,0 +1,44 @@
+﻿<Window x:Class="Unakin.ToolWindows.StepsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Steps Confirmation" Height="600" Width="1000"
+        Background="#282828A0" Closing="Window_Closing">
+	<Window.Resources>
+		<Style x:Key="AccentButtonStyle" TargetType="Button">
+			<Setter Property="Background" Value="White"/>
+			<Setter Property="Foreground" Value="Black"/>
+			<Setter Property="FontSize" Value="12"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="Padding" Value="5,2"/>
+			<Setter Property="Width" Value="70"/>
+			<Setter Property="Height" Value="25"/>
+			<Setter Property="BorderThickness" Value="2"/>
+			<Setter Property="BorderBrush" Value="Black"/>
+			<Setter Property="Margin" Value="5,10"/>
+		</Style>
+	</Window.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<!-- Use StackPanel for vertical alignment -->
+		<StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Top" Margin="10">
+			<DockPanel>
+				<Image Source="pack://application:,,,/Unakin;component/Resources/dante.png" Width="50" Height="50" DockPanel.Dock="Left"/>
+				<TextBlock Text="Orchestrator Agent" FontSize="20" Foreground="White" VerticalAlignment="Center" Margin="10,0,0,0"/>
+			</DockPanel>
+			<TextBlock Text="This dialog presents a series of steps. 'Proceed' to confirm, 'Regenerate' to modify, and 'Quit' to exit."
+                       FontSize="14" Foreground="Gray" Margin="10,5,0,0" TextWrapping="Wrap"/>
+		</StackPanel>
+		<ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="10,10,0,0">
+			<TextBlock x:Name="txtSteps" TextWrapping="WrapWithOverflow" Foreground="White" />
+		</ScrollViewer>
+		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,10">
+			<Button x:Name="btnYes" Content="Proceed" Click="BtnYes_Click" Style="{StaticResource AccentButtonStyle}"/>
+			<Button x:Name="btnNo" Content="Regenerate" Click="BtnNo_Click" Style="{StaticResource AccentButtonStyle}"/>
+			<Button x:Name="btnCancel" Content="Quit" Click="BtnCancel_Click" Style="{StaticResource AccentButtonStyle}"/>
+		</StackPanel>
+	</Grid>
+</Window>

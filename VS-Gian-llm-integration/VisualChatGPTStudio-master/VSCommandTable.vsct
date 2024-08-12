@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+  <Commands package="Unakin">
+
+    <Groups>
+        <Group guid="Unakin" id="GroupSubMenuUnakinMain" />
+        <Group guid="Unakin" id="GroupForCommandsUnakinMain" />	
+    </Groups>
+
+    <Menus>
+        <Menu guid="Unakin" id="SubMenuUnakin" type="Menu">
+            <Strings>
+                <ButtonText>Unakin</ButtonText>
+            </Strings>
+        </Menu>
+    </Menus>
+
+    <Buttons>
+		<!--
+        <Button guid="Unakin" id="SemanticSearch" priority="0x0000" type="Button">
+	        <Icon guid="UnakinSemanticSearchIcon" id="semanticSearchIcon" />
+	        <Strings>
+		        <ButtonText>Semantic Search</ButtonText>
+		        <LocCanonicalName>.Unakin.SemanticSearch</LocCanonicalName>
+	        </Strings>
+        </Button>
+		-->
+        <Button guid="Unakin" id="Complete" priority="0x0001" type="Button">
+            <Icon guid="UnakinCompleteIcon" id="completeIcon" />
+            <Strings>
+                <ButtonText>Complete</ButtonText>
+                <LocCanonicalName>.Unakin.Complete</LocCanonicalName>
+            </Strings>
+        </Button>
+		
+        <Button guid="Unakin" id="AddTests" priority="0x0100" type="Button">
+            <Icon guid="UnakinAddTestsIcon" id="addTestsIcon" />
+            <Strings>
+                <ButtonText>Add Tests</ButtonText>
+                <LocCanonicalName>.Unakin.AddTests</LocCanonicalName>
+            </Strings>
+        </Button>
+		
+        <Button guid="Unakin" id="FindBugs" priority="0x0200" type="Button">
+            <Icon guid="UnakinFindBugsIcon" id="findBugsIcon" />
+            <Strings>
+                <ButtonText>Find Bugs</ButtonText>
+                <LocCanonicalName>.Unakin.FindBugs</LocCanonicalName>
+            </Strings>
+        </Button>
+		
+        <Button guid="Unakin" id="Optimize" priority="0x0300" type="Button">
+            <Icon guid="UnakinOptimizeIcon" id="optimizeIcon" />
+            <Strings>
+                <ButtonText>Optimize</ButtonText>
+                <LocCanonicalName>.Unakin.Optimize</LocCanonicalName>
+            </Strings>
+        </Button>
+		
+        <Button guid="Unakin" id="OptimizeDiffView" priority="0x0301" type="Button">
+            <Icon guid="UnakinOptimizeDiffViewIcon" id="optimizeDiffViewIcon" />
+            <Strings>
+                <ButtonText>Optimize (Diff View)</ButtonText>
+                <LocCanonicalName>.Unakin.OptimizeDiffView</LocCanonicalName>
+            </Strings>
+        </Button>
+		
+        <Button guid="Unakin" id="Explain" priority="0x0400" type="Button">
+            <Icon guid="UnakinExplainIcon" id="explainIcon" />
+            <Strings>
+                <ButtonText>Explain</ButtonText>
+                <LocCanonicalName>.Unakin.Explain</LocCanonicalName>
+            </Strings>
+        </Button>
+		
+        <Button guid="Unakin" id="AddComments" priority="0x0500" type="Button">
+            <Icon guid="UnakinAddCommentsIcon" id="addCommentsIcon" />
+            <Strings>
+                <ButtonText>Add Comments</ButtonText>
+                <LocCanonicalName>.Unakin.AddComments</LocCanonicalName>
+            </Strings>
+        </Button>
+		
+        <Button guid="Unakin" id="AddSummary" priority="0x0600" type="Button">
+            <Icon guid="UnakinAddSummaryIcon" id="addSummaryIcon" />
+            <Strings>
+                <ButtonText>Add Summary</ButtonText>
+                <LocCanonicalName>.Unakin.AddSummary</LocCanonicalName>
+            </Strings>
+        </Button>
+		
+        <Button guid="Unakin" id="AddSummaryForAll" priority="0x0601" type="Button">
+            <Icon guid="UnakinaddSummaryForAllIcon" id="addSummaryForAllIcon" />
+            <Strings>
+                <ButtonText>Add Summary For Entire Class</ButtonText>
+                <LocCanonicalName>.Unakin.AddSummaryForAll</LocCanonicalName>
+            </Strings>
+        </Button>
+		
+        <Button guid="Unakin" id="Translate" priority="0x0701" type="Button">
+            <Icon guid="UnakinTranslateIcon" id="translateIcon" />
+            <Strings>
+                <ButtonText>Translate</ButtonText>
+                <LocCanonicalName>.Unakin.Translate</LocCanonicalName>
+            </Strings>
+        </Button>
+		<!--
+        <Button guid="Unakin" id="ProjectSummary" priority="0x0702" type="Button">
+	        <Icon guid="UnakinProjectSummaryIcon" id="projectSummaryIcon" />
+            <Strings>
+	            <ButtonText>Project Summary</ButtonText>
+	            <LocCanonicalName>.Unakin.ProjectSummary</LocCanonicalName>
+            </Strings>
+        </Button>
+		-->
+		<!--
+        <Button guid="Unakin" id="WebSearch" priority="0x0703" type="Button">
+	        <Icon guid="UnakinWebSearchIcon" id="webSearchIcon" />
+            <Strings>
+	            <ButtonText>WebSearch</ButtonText>
+	            <LocCanonicalName>.Unakin.WebSearch</LocCanonicalName>
+            </Strings>
+        </Button>	
+		-->
+		<!--
+        <Button guid="Unakin" id="AutomatedTesting" priority="0x0704" type="Button">
+	        <Icon guid="UnakinAutomatedTestingIcon" id="automatedTestingIcon" />
+	        <Strings>
+		        <ButtonText>AutomatedTesting</ButtonText>
+		        <LocCanonicalName>.Unakin.AutomatedTesting</LocCanonicalName>
+	        </Strings>
+        </Button>
+		-->
+        <Button guid="Unakin" id="UnakinChat" priority="0x0706" type="Button">
+            <Icon guid="UnakinChatIcon" id="unakinChatIcon" />
+            <Strings>
+	            <ButtonText>Unakin Chat</ButtonText>
+	            <LocCanonicalName>.Unakin.UnakinChat</LocCanonicalName>
+            </Strings>
+        </Button>
+		<!--
+        <Button guid="Unakin" id="UnakinMainWindow" priority="0x0707" type="Button">
+            <Icon guid="UnakinShortSearchIcon" id="shortSearchIcon" />
+            <Strings>
+	            <ButtonText>Unakin Main Window</ButtonText>
+	            <LocCanonicalName>.Unakin.UnakinMainWindow</LocCanonicalName>
+            </Strings>
+        </Button>	
+		-->
+		<!--
+        <Button guid="Unakin" id="CustomBefore" priority="0x0800" type="Button">
+            <Icon guid="UnakinCustomBeforeIcon" id="customBeforeIcon" />
+            <Strings>
+                <ButtonText>Custom Before</ButtonText>
+                <LocCanonicalName>.Unakin.CustomBefore</LocCanonicalName>
+            </Strings>
+        </Button>
+		-->
+		<!--
+        <Button guid="Unakin" id="CustomAfter" priority="0x0900" type="Button">
+            <Icon guid="UnakinCustomAfterIcon" id="customAfterIcon" />
+            <Strings>
+                <ButtonText>Custom After</ButtonText>
+                <LocCanonicalName>.Unakin.CustomAfter</LocCanonicalName>
+            </Strings>
+        </Button>
+		-->
+		<!--
+        <Button guid="Unakin" id="CustomReplace" priority="0x0901" type="Button">
+            <Icon guid="UnakinCustomReplaceIcon" id="customReplaceIcon" />
+            <Strings>
+                <ButtonText>Custom Replace</ButtonText>
+                <LocCanonicalName>.Unakin.CustomReplace</LocCanonicalName>
+            </Strings>
+        </Button>
+		-->
+        <Button guid="Unakin" id="Cancel" priority="0x0902" type="Button">
+            <Icon guid="UnakinCancelIcon" id="cancelIcon" />
+            <Strings>
+                <ButtonText>Cancel</ButtonText>
+                <LocCanonicalName>.Unakin.Cancel</LocCanonicalName>
+            </Strings>
+        </Button>
+		<!--
+        <Button guid="guidUnakinPackageCmdSet" id="cmdidTerminalWindowCommand" priority="0x0100" type="Button">
+            <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1" />
+            <Icon guid="UnakinChatGPTIcon" id="chatGPTIcon" />
+            <Strings>
+                <ButtonText>Visual Unakin Studio</ButtonText>
+            </Strings>
+        </Button>
+		-->
+        <Button guid="guidUnakinPackageCmdSet" id="cmdidTerminalWindowTurboCommand" priority="0x0100" type="Button">
+            <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1" />
+            <Icon guid="UnakinTurboIcon" id="turboIcon" />
+            <Strings>
+                <ButtonText>Visual Unakin Studio Turbo</ButtonText>
+            </Strings>
+        </Button>
+		
+        <Button guid="Unakin" id="Tutorial" priority="0x0903" type="Button">
+            <Icon guid="UnakinTutorialIcon" id="tutorialIcon" />
+            <Strings>
+	            <ButtonText>Tutorial</ButtonText>
+	            <LocCanonicalName>.Unakin.Tutorial</LocCanonicalName>
+            </Strings>
+        </Button>
+		<!--
+        <Button guid="guidUnakinAgentsCmdSet" id="CmdIdUnakinAgents" priority="0x0101" type="Button">
+			<Parent guid="Unakin" id="GroupSubMenuUnakinMain" />
+	        <Strings>
+		        <ButtonText>Unakin Agent Hub</ButtonText>
+	        </Strings>
+        </Button>   
+		-->
+    </Buttons>
+
+    <Bitmaps>
+      <Bitmap guid="UnakinCompleteIcon" href="Resources\complete.png" usedList="completeIcon" />
+      <Bitmap guid="UnakinAddTestsIcon" href="Resources\addTests.png" usedList="addTestsIcon" />
+      <Bitmap guid="UnakinFindBugsIcon" href="Resources\findBugs.png" usedList="findBugsIcon" />
+      <Bitmap guid="UnakinOptimizeIcon" href="Resources\optimize.png" usedList="optimizeIcon" />
+      <Bitmap guid="UnakinOptimizeDiffViewIcon" href="Resources\optimizeDiffView.png" usedList="optimizeDiffViewIcon" />
+      <Bitmap guid="UnakinExplainIcon" href="Resources\explain.png" usedList="explainIcon" />
+      <Bitmap guid="UnakinAddCommentsIcon" href="Resources\addComments.png" usedList="addCommentsIcon" />
+      <Bitmap guid="UnakinAddSummaryIcon" href="Resources\addSummary.png" usedList="addSummaryIcon" />
+      <Bitmap guid="UnakinaddSummaryForAllIcon" href="Resources\addSummaryForAll.png" usedList="addSummaryForAllIcon" />
+      <Bitmap guid="UnakinAskAnythingIcon" href="Resources\askAnything.png" usedList="askAnythingIcon" />
+      <Bitmap guid="UnakinTranslateIcon" href="Resources\translate.png" usedList="translateIcon" />
+	  <Bitmap guid="UnakinProjectSummaryIcon" href="Resources\glasses.png" usedList="projectSummaryIcon" />
+	  <Bitmap guid="UnakinWebSearchIcon" href="Resources\mug.png" usedList="webSearchIcon" />
+	  <Bitmap guid="UnakinAutomatedTestingIcon" href="Resources\folder.png" usedList="automatedTestingIcon" />
+      <Bitmap guid="UnakinShortSearchIcon" href="Resources\shortsearch.png" usedList="shortSearchIcon" />
+	  <Bitmap guid="UnakinChatIcon" href="Resources\unakin-chat.png" usedList="unakinChatIcon" />
+	  <Bitmap guid="UnakinSemanticSearchIcon" href="Resources\semanticsearch.png" usedList="semanticSearchIcon" />
+      <Bitmap guid="UnakinCustomBeforeIcon" href="Resources\customBefore.png" usedList="customBeforeIcon" />
+      <Bitmap guid="UnakinCustomAfterIcon" href="Resources\customAfter.png" usedList="customAfterIcon" />
+      <Bitmap guid="UnakinCustomReplaceIcon" href="Resources\customReplace.png" usedList="customReplaceIcon" />
+      <Bitmap guid="UnakinCancelIcon" href="Resources\cancelCommand.png" usedList="cancelIcon" />
+      <Bitmap guid="UnakinChatGPTIcon" href="Resources\bot.png" usedList="chatGPTIcon" />
+      <Bitmap guid="UnakinTurboIcon" href="Resources\turbo.png" usedList="turboIcon" />
+	  <Bitmap guid="UnakinTutorialIcon" href="Resources\tutorial.png" usedList="tutorialIcon" />		
+      <Bitmap guid="guidImages" href="VisualChatGPTStudio2019\Resources\UnitTesting.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+    </Bitmaps>
+  </Commands>
+
+  <KeyBindings>
+	  
+    <KeyBinding guid="Unakin" id="Complete" mod1="ALT" key1="0" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="AddTests" mod1="ALT" key1="1" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="FindBugs" mod1="ALT" key1="2" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="Optimize" mod1="ALT" key1="3" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="OptimizeDiffView" mod1="ALT" key1="4" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="Explain" mod1="ALT" key1="5" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="AddComments" mod1="ALT" key1="6" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="AddSummary" mod1="ALT" key1="7" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="AddSummaryForAll" mod1="ALT" key1="9" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="Translate" mod1="ALT" key1="8" editor="guidVSStd97" />
+	<KeyBinding guid="Unakin" id="ProjectSummary" mod1="ALT" key1="P" editor="guidVSStd97" />
+	<KeyBinding guid="Unakin" id="WebSearch" mod1="ALT" key1="W" editor="guidVSStd97" />  
+	<KeyBinding guid="Unakin" id="AutomatedTesting" mod1="ALT" key1="T" editor="guidVSStd97" />
+	<KeyBinding guid="Unakin" id="ShortSearch" mod1="ALT" key1="F" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="CustomBefore" mod1="ALT" key1="B" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="CustomAfter" mod1="ALT" key1="A" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="CustomReplace" mod1="ALT" key1="R" editor="guidVSStd97" />
+    <KeyBinding guid="Unakin" id="Cancel" mod1="ALT" key1="Z" editor="guidVSStd97" />
+	<KeyBinding guid="Unakin" id="UnakinMainWindow" mod1="ALT" key1="U" editor="guidVSStd97" />	  
+	<KeyBinding guid="Unakin" id="UnakinChat" mod1="ALT" key1="X" editor="guidVSStd97" />
+	<KeyBinding guid="Unakin" id="SemanticSearch" mod1="ALT" key1="S" editor="guidVSStd97" />
+	<KeyBinding guid="Unakin" id="Tutorial" mod1="ALT" key1="C" editor="guidVSStd97" />
+  </KeyBindings>
+
+  <CommandPlacements>
+    <CommandPlacement guid="Unakin" id="GroupSubMenuUnakinMain" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="SubMenuUnakin" priority="0x100">
+        <Parent guid="Unakin" id="GroupSubMenuUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="GroupForCommandsUnakinMain" priority="0x0100">
+        <Parent guid="Unakin" id="SubMenuUnakin" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="Complete" priority="0x0100">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="AddTests" priority="0x0200">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="FindBugs" priority="0x0300">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="Optimize" priority="0x0400">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="OptimizeDiffView" priority="0x0501">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="Explain" priority="0x0600">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="AddComments" priority="0x0700">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="AddSummary" priority="0x0800">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="AskAnything" priority="0x0900">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="Translate" priority="0x1000">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="ProjectSummary" priority="0x1100">
+	    <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>	  
+    <CommandPlacement guid="Unakin" id="WebSearch" priority="0x1200">
+	    <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>	
+    <CommandPlacement guid="Unakin" id="AutomatedTesting" priority="0x1300">
+	    <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>   
+    <CommandPlacement guid="Unakin" id="CustomBefore" priority="0x1400">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="CustomAfter" priority="0x1500">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="CustomReplace" priority="0x1600">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="Cancel" priority="0x1700">
+        <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>	  
+    <CommandPlacement guid="Unakin" id="UnakinMainWindow" priority="0x1800">
+	    <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement>		  
+    <CommandPlacement guid="Unakin" id="UnakinChat" priority="0x1900">
+	    <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement> 	  
+    <CommandPlacement guid="Unakin" id="SemanticSearch" priority="0x2000" >
+	    <Parent guid="Unakin" id="GroupForCommandsUnakinMain"/>
+    </CommandPlacement>
+    <CommandPlacement guid="Unakin" id="Tutorial" priority="0x2100">
+	    <Parent guid="Unakin" id="GroupForCommandsUnakinMain" />
+    </CommandPlacement> 
+  </CommandPlacements>
+
+  <Symbols>
+    <GuidSymbol name="Unakin" value="{1e5e84f8-48b1-4c7e-8634-13a1fc0bd1ba}">
+        <IDSymbol name="GroupSubMenuUnakinMain" value="0x1000" />
+        <IDSymbol name="GroupForCommandsUnakinMain" value="0x1001" />
+        <IDSymbol name="SubMenuUnakin" value="0x2000" />
+
+        <IDSymbol name="SemanticSearch" value="0x0000" />
+        <IDSymbol name="Complete" value="0x0001" />
+        <IDSymbol name="AddTests" value="0x0100" />
+        <IDSymbol name="FindBugs" value="0x0200" />
+        <IDSymbol name="Optimize" value="0x0300" />
+        <IDSymbol name="OptimizeDiffView" value="0x0301" />
+        <IDSymbol name="Explain" value="0x0400" />
+        <IDSymbol name="AddComments" value="0x0500" />
+        <IDSymbol name="AddSummary" value="0x0600" />
+        <IDSymbol name="AddSummaryForAll" value="0x0601" />
+        <IDSymbol name="AskAnything" value="0x0700" />
+        <IDSymbol name="Translate" value="0x0701" />
+        <IDSymbol name="ProjectSummary" value="0x0702" />
+        <IDSymbol name="WebSearch" value="0x0703" />
+        <IDSymbol name="AutomatedTesting" value="0x0704" />
+        <IDSymbol name="ShortSearch" value="0x0705" />
+        <IDSymbol name="UnakinChat" value="0x0706" />
+        <IDSymbol name="UnakinMainWindow" value="0x0707" />
+        <IDSymbol name="CustomBefore" value="0x0800" />
+        <IDSymbol name="CustomAfter" value="0x0900" />
+        <IDSymbol name="CustomReplace" value="0x0901" />
+        <IDSymbol name="Cancel" value="0x0902" />
+        <IDSymbol name="Tutorial" value="0x0903" />
+    </GuidSymbol>
+
+    <GuidSymbol value="{3ff86b45-d8b7-4978-9a3e-069edae059bf}" name="guidUnakinPackageCmdSet">
+      <IDSymbol value="256" name="cmdidTerminalWindowCommand" />
+      <IDSymbol value="257" name="cmdidTerminalWindowTurboCommand" />
+	  <IDSymbol value="258" name="cmdidSementicSearchUnakinCommand" />
+    </GuidSymbol>
+
+	<GuidSymbol value="{34d86e7c-8233-468d-9bb9-bbaa79dbc11d}" name="guidUnakinAgentsCmdSet">
+		<IDSymbol value="259" name="CmdIdUnakinAgents" />
+	</GuidSymbol>
+
+	<GuidSymbol name="UnakinCompleteIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EEA}">
+      <IDSymbol name="completeIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinAddTestsIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EEB}">
+      <IDSymbol name="addTestsIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinFindBugsIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EEC}">
+      <IDSymbol name="findBugsIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinOptimizeIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EED}">
+      <IDSymbol name="optimizeIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinOptimizeDiffViewIcon" value="{30E42718-2334-493F-9F85-DB3B0F01F364}">
+      <IDSymbol name="optimizeDiffViewIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinExplainIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EEE}">
+      <IDSymbol name="explainIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinAddCommentsIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EEF}">
+      <IDSymbol name="addCommentsIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinAddSummaryIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EAA}">
+      <IDSymbol name="addSummaryIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinaddSummaryForAllIcon" value="{2DE8036F-824C-4B98-BF28-0805CCCE17F4}">
+      <IDSymbol name="addSummaryForAllIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinAskAnythingIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EBA}">
+      <IDSymbol name="askAnythingIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinTranslateIcon" value="{AE75CD23-1146-4732-8EE1-7BFDACAD3E17}">
+      <IDSymbol name="translateIcon" value="1" />
+    </GuidSymbol>
+	<GuidSymbol name="UnakinProjectSummaryIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EB1}">
+	  <IDSymbol name="projectSummaryIcon" value="1" />
+	</GuidSymbol>
+	<GuidSymbol name="UnakinWebSearchIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EB2}">
+	  <IDSymbol name="webSearchIcon" value="1" />
+	</GuidSymbol> 
+	<GuidSymbol name="UnakinShortSearchIcon" value="{5DD7E805-8361-40C0-84D4-EA102FA38ED4}">
+		<IDSymbol name="shortSearchIcon" value="1" />
+	</GuidSymbol>
+	<GuidSymbol name="UnakinSemanticSearchIcon" value="{D704BE4B-86C0-4F76-BDF5-516CBBB27E4F}">
+		<IDSymbol name="semanticSearchIcon" value="1" />
+	</GuidSymbol>
+	<GuidSymbol name="UnakinAutomatedTestingIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EB3}">
+	  <IDSymbol name="automatedTestingIcon" value="1" />
+	</GuidSymbol>
+    <GuidSymbol name="UnakinCustomBeforeIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06ECA}">
+      <IDSymbol name="customBeforeIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinCustomAfterIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EDA}">
+      <IDSymbol name="customAfterIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinCustomReplaceIcon" value="{38A870F1-BED8-4322-B98B-11A53E51821C}">
+      <IDSymbol name="customReplaceIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinCancelIcon" value="{D346ADF7-8DF0-48DE-B268-7149699B3CF8}">
+      <IDSymbol name="cancelIcon" value="1" />
+    </GuidSymbol>
+	<GuidSymbol name="UnakinChatIcon" value="{FE748A6B-E9FB-4E62-8E91-1D86D7D97BE5}">
+      <IDSymbol name="unakinChatIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinChatGPTIcon" value="{4C9AF432-30B5-44CB-9A6E-3121C6DC7A49}">
+      <IDSymbol name="chatGPTIcon" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="UnakinTurboIcon" value="{4C9AF432-30B5-44CB-9A6E-3121C6DC7A50}">
+      <IDSymbol name="turboIcon" value="1" />
+    </GuidSymbol>
+	<GuidSymbol name="UnakinTutorialIcon" value="{C12A8ED0-FBE5-4815-A3FB-2CB73AB06EB4}">
+		<IDSymbol name="tutorialIcon" value="1" />
+	</GuidSymbol>
+  
+    <GuidSymbol value="{4f25ed68-89f2-4ed9-847c-45156c6c1f80}" name="guidImages">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  
+  </Symbols>
+</CommandTable>

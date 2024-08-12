@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>8d02bb3e-2996-4b5c-a4be-c1514b7b93df</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>UnakinShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\AddComments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\AddSummary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\AddTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\AskAnything.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\BaseGenericCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\BaseCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\Cancel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\Complete.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\CustomAfter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\CustomBefore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\CustomReplace.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\Explain.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\FindBugs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\Optimize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\OptimizeDiffView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\Tutorial.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\TerminalWindowTurboCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\Translate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DTO\ChatHistoryDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DTO\HitsDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DTO\Response.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DTO\ResponseDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DTO\ResultsDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Enums.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Base\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Classes\DataGenerationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Classes\AutonomousAgentHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Classes\AgentChatHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Base\BaseChatHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Classes\ChatVM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Classes\AutomatedTestingHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Classes\ProjectSummaryHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Classes\SemanticSearchChatHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Classes\IDEChatHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Classes\RegularChatHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IChatHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Agent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ChatDetail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ChatMaster.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Options\Commands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Options\OptionCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Options\OptionCommandsWindow.xaml.cs">
+      <DependentUpon>OptionCommandsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Options\OptionPageGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Options\OptionPageGridCommands.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Options\UnakinBrowsableAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dialogs\AddAgentDialog.xaml.cs">
+      <DependentUpon>AddAgentDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\AgentControl.xaml.cs">
+      <DependentUpon>AgentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\AgentToolWindow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dialogs\ChatHistoryDialog.xaml.cs">
+      <DependentUpon>ChatHistoryDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\ChatControl.xaml.cs">
+      <DependentUpon>ChatControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\CodeDisplayWindow.xaml.cs">
+      <DependentUpon>CodeDisplayWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\ColumnInputDialog.xaml.cs">
+      <DependentUpon>ColumnInputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\SemanticSearchUnakin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\SemanticSearchUnakinControl.xaml.cs">
+      <DependentUpon>SemanticSearchUnakinControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\SimpleInputDialog.xaml.cs">
+      <DependentUpon>SimpleInputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\StepsDialog.xaml.cs">
+      <DependentUpon>StepsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\TableDisplayWindow.xaml.cs">
+      <DependentUpon>TableDisplayWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\TerminalWindow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\TerminalWindowControl.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\TerminalWindowHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ToolWindows\ChatToolWindow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\AppDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\AuthHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\ChatGPT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\CommonUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Http\APIClientBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Http\ChatGPTHttpClientFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Http\HttpClientCustom.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Http\RequestCaptureHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\SemanticSearchServerHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\SyncWatcher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\UnakinLogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DTO\ChatItemDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\ChatGPTHttpClientFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\HighlightingDefinitionConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\HttpClientCustom.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\TextFormat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\TurboChatHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Unakin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VisuallUnakinStudioPackage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Options\OptionCommandsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Dialogs\AddAgentDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ToolWindows\AgentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Dialogs\ChatHistoryDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ToolWindows\ChatControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ToolWindows\CodeDisplayWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ToolWindows\ColumnInputDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ToolWindows\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ToolWindows\SemanticSearchUnakinControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ToolWindows\SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ToolWindows\SimpleInputDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ToolWindows\StepsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ToolWindows\TableDisplayWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ToolWindows\TerminalWindowControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Dialogs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Utils\CustomLanguage.xshd" />
+  </ItemGroup>
+</Project>
